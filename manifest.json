@@ -1,0 +1,20 @@
+{
+  "name": "CraftyHook Studio",
+  "short_name": "CraftyHook",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://drive.google.com/thumbnail?id=1reO_YhiXXVv-mw8mpYSrUrP5Pw_5MsJj&sz=w192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1reO_YhiXXVv-mw8mpYSrUrP5Pw_5MsJj&sz=w512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
