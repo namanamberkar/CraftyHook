@@ -8,118 +8,131 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    :root {
-    --brand-primary: #8b5cf6;
-    /* Violet-500 */
-    --brand-secondary: #ec4899;
-    /* Pink-500 */
-    --safe-top: env(safe-area-inset-top, 0);
-    --safe-bottom: env(safe-area-inset-bottom, 0);
-    }
+    <meta name="apple-mobile-web-app-title" content="CraftyHook">
+    <title>CraftyHook Studio</title>
 
-    body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #f8fafc;
-    overflow-x: hidden;
-    -webkit-tap-highlight-color: transparent;
-    padding-bottom: var(--safe-bottom);
-    }
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-    .glass-header {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #8b5cf6;
+            /* Violet-500 */
+            --brand-secondary: #ec4899;
+            /* Pink-500 */
+            --safe-top: env(safe-area-inset-top, 0);
+            --safe-bottom: env(safe-area-inset-bottom, 0);
+        }
 
-    .bento-card {
-    background: #ffffff;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8fafc;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: var(--safe-bottom);
+        }
 
-    .bento-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: rgba(139, 92, 246, 0.2);
-    }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
-    .bento-card:active {
-    transform: scale(0.98);
-    }
+        .bento-card {
+            background: #ffffff;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
 
-    .tab-indicator {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
 
-    @keyframes reveal {
-    from {
-    opacity: 0;
-    transform: translateY(20px);
-    }
+        .bento-card:active {
+            transform: scale(0.98);
+        }
 
-    to {
-    opacity: 1;
-    transform: translateY(0);
-    }
-    }
+        .tab-indicator {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-    .reveal-item {
-    animation: reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    }
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-    @keyframes slideUp {
-    from {
-    transform: translateY(100%);
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    to {
-    transform: translateY(0);
-    }
-    }
+        .reveal-item {
+            animation: reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
 
-    .sheet-animate {
-    animation: slideUp 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-    }
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
 
-    ::-webkit-scrollbar {
-    display: none;
-    }
+            to {
+                transform: translateY(0);
+            }
+        }
 
-    .gradient-text {
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    }
+        .sheet-animate {
+            animation: slideUp 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+        }
 
-    @keyframes float {
-    0% {
-    transform: translateY(0px);
-    }
+        ::-webkit-scrollbar {
+            display: none;
+        }
 
-    50% {
-    transform: translateY(-3px);
-    }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    100% {
-    transform: translateY(0px);
-    }
-    }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
 
-    .animate-float {
-    animation: float 3s ease-in-out infinite;
-    }
+            50% {
+                transform: translateY(-3px);
+            }
 
-    .fab-gradient {
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
-    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
-    }
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
-    .fab-gradient:hover {
-    box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.6);
-    }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fab-gradient {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+        }
+
+        .fab-gradient:hover {
+            box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.6);
+        }
     </style>
 </head>
 
@@ -183,7 +196,7 @@
     <!-- Main -->
     <main id="content" class="px-6 pb-40 pt-4">
         <div id="loader" class="flex flex-col items-center justify-center py-32 space-y-6">
-            <img src="logo.png" alt="Loading..." class="w-16 h-16 object-contain animate-bounce">
+            <img src="logo.png" alt="Loading..." class="w-32 h-32 object-contain animate-bounce">
             <div class="w-10 h-10 border-4 border-violet-500 border-t-transparent rounded-full animate-spin hidden">
             </div>
             <p class="text-xs font-bold text-slate-400 tracking-widest uppercase">Syncing</p>
