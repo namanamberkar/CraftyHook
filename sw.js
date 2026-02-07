@@ -3,7 +3,6 @@ const ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  'https://cdn.tailwindcss.com',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap'
 ];
